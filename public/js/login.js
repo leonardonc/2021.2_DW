@@ -9,10 +9,10 @@ form.onsubmit = async (event) => {
   try {
     const user = Object.fromEntries(new FormData(form));
 
-    const { auth, token } = await api.create("signin", user, false);
+    const { auth, token } = await api.create("login", user, false);
 
     if (auth) {
-      Auth.signin(token);
+      Auth.login(token);
     }
   } catch (error) {
     showToast("Login Error.");

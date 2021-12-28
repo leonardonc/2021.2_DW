@@ -31,7 +31,7 @@ function createHostRow(id, name, address) {
       <div class="d-flex justify-content-between">
         <i class="far fa-trash-alt" onclick="destroyHost(${id})"></i>
         <i class="fas fa-door-open">
-          <button onclick="myFunction()">SSH</button>
+          <button onclick="Function()">SSH</button>
         </i>
         <div class="spinner-border spinner-border-sm invisible" role="status">
           <span class="visually-hidden">Loading...</span>

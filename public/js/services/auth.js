@@ -2,7 +2,7 @@ function isAuthenticated() {
     if (getToken()) {
       return true;
     } else {
-      redirectToSignin();
+      redirectToLogin();
     }
   }
   
@@ -10,7 +10,7 @@ function isAuthenticated() {
     return localStorage.getItem("@MonitorApp:token");
   }
   
-  function signin(token) {
+  function login(token) {
     localStorage.setItem("@MonitorApp:token", token);
   
     redirectToHome();
@@ -19,17 +19,17 @@ function isAuthenticated() {
   function signout() {
     fetch("/signout");
   
-    redirectToSignin();
+    redirectToLogin();
   }
   
   function redirectToHome() {
     window.location.href = "/index.html";
   }
   
-  function redirectToSignin() {
+  function redirectToLogin() {
     localStorage.removeItem("@MonitorApp:token");
   
-    window.location.href = "/signin.html";
+    window.location.href = "/login.html";
   }
   
-  export default { isAuthenticated, getToken, signin, signout, redirectToHome, redirectToSignin };
+  export default { isAuthenticated, getToken, login, signout, redirectToHome, redirectToLogin };

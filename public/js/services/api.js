@@ -18,13 +18,13 @@ async function create(resource, data, auth = true) {
   if (auth && token) {
     config.headers.Authorization = `Bearer ${token}`;
   } else if (auth && !token) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   }
 
   const response = await fetch(url, config);
 
   if (auth & response.status === 401) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   }
 
   if (!response.ok || response.status === 201) {
@@ -46,13 +46,13 @@ async function read(resource, auth = true) {
   if (auth && token) {
     config.headers = { Authorization: `Bearer ${token}`};
   } else if (auth && !token) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   }
 
   const response = await fetch(url, config);
 
   if (response.status === 401) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   }
 
   if (!response.ok) {
@@ -76,7 +76,7 @@ async function destroy(resource, auth = true) {
   if (auth && token) {
     config.headers = { Authorization: `Bearer ${token}`};
   } else if (auth && !token) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   }
 
   const response = await fetch(url, config);
@@ -84,7 +84,7 @@ async function destroy(resource, auth = true) {
   if (response.status === 204) {
     return true;
   } else if (response.status === 401) {
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   } else {
     throw new Error('Destroy error.');
   }

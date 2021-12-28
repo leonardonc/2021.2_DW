@@ -1,5 +1,4 @@
 var os = require('os');
-var networkInterfaces = os.networkInterfaces();
 var app = require('express')();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
@@ -18,11 +17,11 @@ app.post('/conectar', function (req, res) {
 	conectarSSH(req,res);
 });
 
-app.post('/banner', function (req, res) { 
+/* app.post('/banner', function (req, res) { 
 	console.log('/banner');
 	ped = req;
 	resp = res;
-});
+}); */
 
 app.post('/password', function (req, res) { 
 	console.log('/password');
@@ -52,27 +51,27 @@ var readline = require('readline')
 const linealeida = require('readline-sync');
 var conn = new Client();
 
-function conectarSSH(dato){
+function conectarSSH(data){
 	conn.connect({
-		host: dato.host,
-		port: dato.port,
-		username: dato.user,
+		host: data.host,
+		port: data.port,
+		username: data.user,
 		tryKeyboard: true,
 		readyTimeout: 40000
 	});
 	io.emit('conectar', "conectando...");
 }
 
-function passarComando(dato){
-	comando = dato.comando;
-	estado = dato.estado;	
+function passarComando(data){
+	comando = data.comando;
+	estado = data.estado;	
 	switch (estado) {
 		case 'password':
 			finalizar([comando]);
 			break;
-		case 'Doble_Factor':
+		/* case 'Doble_Factor':
 			finalizar([comando]);
-			break;
+			break; */
 		default:
 			mistream.write(comando + '\n');
 			break;
@@ -80,12 +79,6 @@ function passarComando(dato){
 }
 
 /* -------------	SSH    ------------------ */
-
-conn.on('banner', function (message, language){
-	console.log('Connection :: banner');
-	console.log(message);		
-	io.emit('banner', message);
-});
 
 var finalizar;
 conn.on('keyboard-interactive',function (name, instructions, lang, prompts, finish) {
@@ -123,10 +116,10 @@ function shell_connection(){
 		var rl = readline.createInterface(process.stdin, process.stdout)
 		stream.on('close', function() {
 			process.stdout.write('Connection closed.\n')
-			console.log('Stream :: close');
+			/* console.log('Stream :: close'); */
 			conn.end();
 			mensagem = 'exit\nConnection closed.\n'
-			io.emit('exit', mensagem);
+			/* io.emit('exit', mensagem); */
 		}).on('data', function(data) {
 			process.stdin.pause()
 			process.stdout.write(data) 
@@ -139,18 +132,17 @@ function shell_connection(){
 			io.emit('error', data);
 		});
 
-		rl.on('line', function (d) {
+		/* rl.on('line', function (d) {
 			stream.write(d.trim() + '\n');
-		})
+		}) */
 
-		rl.on('SIGINT', function () {
+		/* rl.on('SIGINT', function () {
 		  process.stdin.pause()
 		  process.stdout.write('\nEnding session\n')
 		  rl.close()
-		  // close connection
 		  stream.end('exit\n');
 			io.emit('exit', 'exit');
-		})
+		}) */
 	});
 }
 /* --------------------	fim SSH ------------------------- */

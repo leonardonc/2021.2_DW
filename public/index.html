@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="redirectToSignin()">Sair</a>
+            <a class="nav-link" href="#" onclick="redirectToLogin()">Sair</a>
           </li>
         </ul>
       </div>
@@ -91,19 +91,19 @@
   <script src="./js/index.js" type="module"></script>
   <script src="./js/services/auth.js" type="module"></script>
   <script>
-    function myFunction() {
+    function Function() {
       window.open("http://localhost/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=580");
     }
   </script>
   <script>
     if (!localStorage.getItem("@MonitorApp:token")) {
-      window.location.href = "/signin.html";
+      window.location.href = "/login.html";
     }
   </script>
   <script>
-    function redirectToSignin() {
+    function redirectToLogin() {
     localStorage.removeItem("@MonitorApp:token");
-    window.location.href = "/signin.html";
+    window.location.href = "/login.html";
   }
   </script>
 </body>

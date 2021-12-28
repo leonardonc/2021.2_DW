@@ -11,7 +11,7 @@ form.onsubmit = async (e) => {
 
     await api.create('signup', user, false);
 
-    Auth.redirectToSignin();
+    Auth.redirectToLogin();
   } catch (error) {
     showToast("Signup Error.");
   }

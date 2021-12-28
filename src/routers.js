@@ -39,7 +39,7 @@ router.post('/signup', async (req, res) => {
   res.json(newUser);
 });
 
-router.post('/signin', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -57,7 +57,6 @@ router.post('/signin', async (req, res) => {
       throw new Error();
     }
   } catch (error) {
-    // console.error(error);
     res.status(401).json({ error: "User not found" });
   }
 });
