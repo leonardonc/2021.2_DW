@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>SSH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/ssh.css" async>
+</head>
+
+<body>
+  <h1>SSH WEB CLIENT</h1>
+  <div id="connectionData">Dados da conexão: <br>
+    <label for="host">IP:</label>
+    <input type="text" name="host" id="host" value="192.168.0.5"> <br>
+    <label for="port">Port:</label>
+    <input type="number" name="port" id="port" value='22'> <br>
+    <label for="user">User:</label>
+    <input type="text" name="user" id="user" placeholder="user" value="leonardo"> <br><br>
+    <button type="button" id="conectar" onclick="conectar()">Conectar</button>
+    <button type="button" onclick="window.close()">Desconectar</button>
+  </div>
+  <output id="answer"></output>
+
+  <div class="container" style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-12">
+      </div>
+    </div>
+  </div>
+  <pre id="areadotexto" name="areadotexto" class="console"></pre>
+  <input type="text" name="comando" id="comando" class="inputcomandos" onkeypress="runScript(event)">
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/ssh.js"></script>
+</body>
+</html>

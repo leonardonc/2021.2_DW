@@ -1,0 +1,17 @@
+{
+    "hosts": [
+      {
+        "id": 1,
+        "name": "Leonardo",
+        "address": "192.168.0.5"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Admin",
+        "email": "admin@email.com",
+        "password": "$2a$10$quitiXC/.3cFr89NVUo0f.l4449.l/azpnQaAFsjxtS.UtngXy0aq"
+      }
+    ]
+  }

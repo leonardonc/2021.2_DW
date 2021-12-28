@@ -1,0 +1,23 @@
+/*.host .fa-trash-alt:hover,
+.host .fa-stopwatch:hover,
+.fa-plus:hover {
+  cursor: pointer;
+}
+
+.card-host .card-body {
+  min-height: 340px;
+}
+*/
+
+.host .fa-trash-alt:hover,
+.fa-plus:hover {
+  cursor: pointer;
+}
+
+body {
+    background-color: rgba(12, 88, 201, 0.671);
+}
+
+h1 {
+  font-family: 'Franklin Gothic Medium';
+}

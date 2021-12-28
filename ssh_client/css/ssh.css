@@ -1,0 +1,18 @@
+.console { 
+	font-family: Consolas;
+	font-size: 10pt; 
+	font-weight: 400; 
+	color: #ffffff;
+	background-color:black;	
+	overflow-y: scroll;
+	height: 300px;
+}
+
+.inputcomandos{
+	font-family: Consolas;
+	font-size: 10pt; 
+	font-weight: 400; 
+	color: #ffffff;
+	width:100%;
+	background-color:black;	
+}

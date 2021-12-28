@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "teste",
+            "database": "${workspaceFolder:ssh_web_client_v2}/src/database/database.sqlite"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

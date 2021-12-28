@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="./js/signup.js" type="module"></script>
+        <title>Login</title>
+    </head>
+    <body>
+        <div id="login">
+            <form class="card">
+                <div>
+                    <img src="img/ifpb.png" width="275" height="113">
+                </div>
+                <div class="card-header">
+                    <center><h2 >Cadastrar Usuários</h2></center>
+                </div>
+                <div class="card-content">
+                    <div class="card-content-area">
+                        <label for="name" class="form-label">Nome</label>
+                        <input type="text" class="form-control" id="name" name="name" autocomplete="on" placeholder="Fulano de Tal" required>
+                    </div>
+                    <div class="card-content-area">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" autocomplete="on" placeholder="fulano@email.com" required>
+                    </div>
+                    <div class="card-content-area">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" autocomplete="off" placeholder="senha" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" onclick="Login()" class="btn btn-primary"  value="Cadastrar">
+                </div><br>
+                <div class="nav-item">
+                    <a class="nav-link" href="/signin.html">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

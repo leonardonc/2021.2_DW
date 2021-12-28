@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(12, 88, 201, 0.671);
+}
+::placeholder {
+  color: rgba(255, 255, 255, 0.384);
+}
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card {
+    background-color: rgba(12, 88, 201, 0.288);
+    padding: 40px;
+    border-radius: 2px;
+    width:280px;
+}
+.card-header {
+    //padding-bottom: 50px;
+    padding-bottom: unset;
+    opacity: 1.0;
+    color: white;
+}
+.card-content label {
+    color: white;
+    font-size: 14px;
+    opacity: 1.0;
+}
+.card-content-area {
+    display: flex;
+    flex-direction: column;
+    padding:10px 0;
+}
+.card-content-area input {
+    margin-top: 10px;
+    padding:0 5px;
+    background-color: transparent;
+    border:none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+}
+.card-footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer .botao{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(5, 57, 136, 0.705);
+    //background-color: #a13854;
+    border:none;
+    color:#e1e1e1;
+    margin: 10px 0;
+}
+
+.card-footer a {
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    color: white;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
